@@ -1,0 +1,31 @@
+name: "Olive"
+run-name: "TORRENT"
+"on":
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+permissions:
+  pages: write
+  contents: read
+  id-token: write
+concurrency:
+  group: "Gravel-${{ github.workflow }}"
+  cancel-in-progress: true
+jobs:
+  KOALA:
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.portland.outputs.page_url }}
+    steps:
+      - name: "Gecko"
+        uses: actions/checkout@v6
+      - name: "valley"
+        uses: actions/configure-pages@v5
+      - name: "onyx"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "LARK"
+        id: portland
+        uses: actions/deploy-pages@v4
